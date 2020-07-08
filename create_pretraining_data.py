@@ -66,8 +66,10 @@ flags.DEFINE_float(
 # add a hyper-parameter: t2s, traditional chinese to simplified chinese
 flags.DEFINE_bool("t2s", False,"traditional chinese to simplified chinese")
 
+converter = Converter('zh-hans')
+
 def Traditional2Simplified(sentence):
-  sentence = Converter('zh-hans').convert(sentence)
+  sentence = converter.convert(sentence)
   return sentence
 
 class TrainingInstance(object):
